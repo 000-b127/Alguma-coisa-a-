@@ -1,0 +1,200 @@
+body {
+  background: linear-gradient(135deg, #353839, #0f0f0f, #000000);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: white;
+  text-align: center;
+  margin: 0;
+  padding-top: 50px;
+  padding-bottom: 100px;
+  margin: 0 10px 0 10px;
+}
+
+.Perfil{
+  height: 250px;
+  width: 250px;
+  border: white solid ;
+  border-radius: 20px;
+}
+
+.titulo{
+  font-size: 25px;
+  font-weight: bold;
+  letter-spacing: 4px;
+  background: linear-gradient(90deg, white, white, white);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 8px white, 0 0 20px #353839;
+  animation: titlePulse 2s infinite;
+}
+
+.subtitulo{
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 4px;
+  background: linear-gradient(90deg, white, white, white);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 8px white, 0 0 20px #353839;
+  animation: titlePulse 2s infinite;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+/* Links */
+.redes {
+  background-color: #4b0082;
+  color: white;
+  font-size: 18px;
+  border-radius: 10px;
+  padding: 12px;
+  display: block;
+  text-align: center;
+  margin: auto auto;
+  width: 90%;
+  /* Ocupa quase toda a largura no celular */
+  max-width: 250px;
+  /* Mas no desktop não fica gigante */
+  color: white;
+  text-decoration: none;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  transition: all 0.3s ease;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  border: white solid;
+  /* sombra suave */
+  background: linear-gradient(135deg, #8a2be2, #4b0082);
+}
+
+/* Efeito hover no desktop */
+.redes:hover {
+  background: linear-gradient(135deg, #353839, #0f0f0f, #000000);
+  color: white;
+  border: #4b0082 2px solid;
+  transform: scale(1.03);
+  /* cresce levemente no hover */
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Media queries para celular */
+@media (max-width: 768px) {
+  .redes {
+    font-size: 16px;
+    /* Letras um pouco menores */
+    padding: 10px;
+    /* Botões mais confortáveis */
+    border-radius: 8px;
+  }
+}
+
+.videos{
+  padding: auto;
+  border: white solid;
+  border-radius: 10px;
+  margin: 100px auto auto auto;
+}
+
+iframe{
+  border: white solid;
+  border-radius: 20px;
+  margin: auto auto 50px auto;
+}
+
+/* Jogo da Velha */
+.tic-tac-toe{
+  max-width: 420px;
+  margin: 40px auto;
+  padding: 20px;
+  border:  solid white;
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+}
+.tic-tac-toe h2{
+  margin: 0 0 12px 0;
+  font-size: 20px;
+}
+.board{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+.cell{
+  background: rgba(255,255,255,0.04);
+  color: #fff;
+  font-size: 36px;
+  height: 100px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.08);
+  cursor: pointer;
+}
+.cell:focus{
+  outline: 2px solid #8a2be2;
+}
+.cell.winning{
+  background: linear-gradient(90deg, #8a2be2, #4b0082);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+.status{
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+.controls{
+  margin-top: 12px;
+}
+#ttt-restart{
+  background: linear-gradient(135deg, #8a2be2, #4b0082);
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+/* Responsive */
+@media (max-width: 480px){
+  .video-item { min-width: 260px; }
+  .video-item iframe { width: 260px; height: 146px; }
+  .cell{height: 80px; font-size: 28px}
+}
+
+/* Barra horizontal de vídeos */
+.video-bar {
+  max-width: 1000px;
+  margin: 24px auto;
+  padding: 12px;
+  border: white solid;
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+}
+.video-bar-title {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+  color: #fff;
+}
+.video-items {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+  -webkit-overflow-scrolling: touch;
+}
+.video-item {
+  min-width: 320px;
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.video-item iframe {
+  width: 320px;
+  height: 180px;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+/* scrollbar styling */
+.video-items::-webkit-scrollbar { height: 10px; }
+.video-items::-webkit-scrollbar-track { background: transparent; }
+.video-items::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); border-radius: 10px; }
