@@ -153,8 +153,9 @@ iframe{
 }
 /* Responsive */
 @media (max-width: 480px){
-  .video-item { min-width: 260px; }
-  .video-item iframe { width: 260px; height: 146px; }
+  .video-item { min-width: 220px; }
+  .video-item img { width: 220px; height: auto; }
+  .video-item a { width: 220px; }
   .cell{height: 80px; font-size: 28px}
 }
 
@@ -174,24 +175,71 @@ iframe{
 }
 .video-items {
   display: flex;
-  gap: 14px;
+  gap: 18px;
   overflow-x: auto;
   padding-bottom: 6px;
   -webkit-overflow-scrolling: touch;
 }
 .video-item {
-  min-width: 320px;
+  min-width: 280px;
   flex: 0 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.video-item iframe {
-  width: 320px;
-  height: 180px;
-  border-radius: 10px;
-  border: none;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+.video-item a {
+  display: block;
+  position: relative;
+  width: 280px;
+  text-decoration: none;
+  box-sizing: border-box;
+  border: 3px solid transparent;
+  border-radius: 14px;
+}
+.video-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.video-item a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  width: 44px;
+  height: 44px;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><circle cx='12' cy='12' r='11' fill='%23000000' fill-opacity='0.35'/><path d='M10 8l6 4-6 4V8z' fill='%23ffffff'/></svg>");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border-radius: 50%;
+  pointer-events: none;
+  transition: transform 0.18s ease, opacity 0.15s ease;
+  opacity: 0.95;
+}
+.video-item a:hover::after,
+.video-item a:focus::after {
+  transform: translate(-50%, -50%) scale(1.12);
+  opacity: 1;
+}
+.video-item a:hover img { transform: scale(1.02); box-shadow: 0 8px 20px rgba(0,0,0,0.28); }
+.video-item a:hover, .video-item a:focus {
+  border-color: #4b0082;
+  box-shadow: 0 10px 26px rgba(75,0,130,0.12);
+}
+.video-item a:focus { outline: none; }
+.video-item a:hover::after,
+.video-item a:focus::after {
+  transform: translate(-50%, -50%) scale(1.08);
+  background: rgba(0,0,0,0.6);
+}
+.video-item a:focus {
+  outline: 3px solid #8a2be2;
+  outline-offset: 4px;
 }
 
 /* scrollbar styling */
